@@ -58,6 +58,9 @@ app.post('/book/:id',async (req,res,next)=>{
     const book = await Book.query().findById(id).patch({
         isbn: nb.isbn,
         title: nb.title,
+        author: nb.author,
+        publisher: nb.publisher,
+        pages: nb.pages
       });
     res.send('Book is edited');
 });

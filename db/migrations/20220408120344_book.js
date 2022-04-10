@@ -6,7 +6,10 @@ exports.up = function(knex) {
     return knex.schema.createTable('book',table => { 
         table.increments('id');
         table.string('isbn').notNullable().unique();
-        table.string('title').notNullable();        
+        table.string('title').notNullable();
+        table.string('author').notNullable();
+        table.string('publisher').notNullable();
+        table.string('pages').notNullable();        
         table.timestamps(true,true);
     })
   

@@ -10,16 +10,20 @@ const setEditModal = (id) => {
 
     const {        
         isbn,
-        title,       
+        title, 
+        author,
+        publisher,
+        pages,
+
     } = book;
 
     // Filling information about the book in the form inside the modal
     document.getElementById('isbn').value = isbn;
     document.getElementById('title').value = title;
-    //document.getElementById('author').value = author;
-    //document.getElementById('publisher').value = publisher;
+    document.getElementById('author').value = author;
+    document.getElementById('publisher').value = publisher;
     //document.getElementById('publish_date').value = publish_date;
-    //document.getElementById('numOfPages').value = numOfPages;
+    document.getElementById('pages').value = pages;
 
     // Setting up the action url for the book
     
@@ -56,7 +60,7 @@ const loadBooks = () => {
 
                         <div>Author: ${book.author}</div>
                         <div>Publisher: ${book.publisher}</div>
-                        <div>Number Of Pages: ${book.numOfPages}</div>
+                        <div>Number Of Pages: ${book.pages}</div>
 
                         <hr>
 
