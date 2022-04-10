@@ -54,9 +54,10 @@ app.post('/book/:id',async (req,res,next)=>{
         
     }
     const{id} = req.params;
+    const nb=req.body;
     const book = await Book.query().findById(id).patch({
-        isbn: 88,
-        title: 'edited'
+        isbn: nb.isbn,
+        title: nb.title,
       });
     res.send('Book is edited');
 });
